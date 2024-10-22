@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:padding="16dp">
+
+    <!-- Top Toolbar -->
+    <RelativeLayout
+        android:id="@+id/top_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:padding="16dp"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="?android:attr/selectableItemBackground"
+            android:tint="#FFFFFF"
+            android:layout_alignParentStart="true"
+            android:contentDescription="Menu" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manage Leave"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+
+        <ImageButton
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_lock_power_off"
+            android:background="?android:attr/selectableItemBackground"
+            android:tint="#FFFFFF"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Logout" />
+    </RelativeLayout>
+
+    <!-- Content Section with ScrollView to avoid cramping -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_toolbar"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- OD/Medical Leave Application -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#2f2f2f"
+                android:padding="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/leave_application_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OD/Medical Leave Application"
+                    android:textColor="#7D3C98"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/leave_application_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#1c1c1c"
+                    android:padding="16dp"
+                    android:layout_gravity="center_horizontal">
+
+                    <TextView
+                        android:id="@+id/leave_type_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type of Leave"
+                        android:textColor="#CCCCCC" />
+
+                    <Spinner
+                        android:id="@+id/leave_type_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#444444"
+                        android:textColor="#FFFFFF"
+                        android:padding="12dp" />
+
+                    <TextView
+                        android:id="@+id/reason_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reason"
+                        android:textColor="#CCCCCC"
+                        android:layout_marginTop="16dp" />
+
+                    <EditText
+                        android:id="@+id/reason_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter reason here..."
+                        android:background="#444444"
+                        android:textColor="#FFFFFF"
+                        android:padding="12dp" />
+
+                    <Button
+                        android:id="@+id/submit_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Submit Application"
+                        android:backgroundTint="#7D3C98"
+                        android:textColor="#000000"
+                        android:padding="12dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Leave Tracking Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#2f2f2f"
+                android:padding="16dp"
+                android:elevation="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/leave_tracking_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Leave Tracking"
+                    android:textColor="#7D3C98"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/leave_tracking_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:id="@+id/leave_info_box"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/leave1_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OD Leave - 2 days"
+                            android:textColor="#FFFFFF" />
+
+                        <TextView
+                            android:id="@+id/leave2_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medical Leave - 3 days"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:id="@+id/leave3_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OD Leave - 1 day"
+                            android:textColor="#FFFFFF"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/leave_status_box"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/leave1_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Approved"
+                            android:textColor="#8bc34a"
+                            android:gravity="end" />
+
+                        <TextView
+                            android:id="@+id/leave2_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending"
+                            android:textColor="#ffeb3b"
+                            android:gravity="end"
+                            android:layout_marginTop="8dp" />
+
+                        <TextView
+                            android:id="@+id/leave3_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Rejected"
+                            android:textColor="#f44336"
+                            android:gravity="end"
+                            android:layout_marginTop="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Attendance Overview Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#2f2f2f"
+                android:padding="16dp"
+                android:elevation="4dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/attendance_overview_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Attendance Overview"
+                    android:textColor="#7D3C98"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:id="@+id/attendance_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <View
+                        android:id="@+id/chart_placeholder"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="#6200ea"
+                        android:layout_marginBottom="16dp"
+                        android:layout_gravity="center_horizontal"
+                        android:elevation="4dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/attendance_info_box"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/total_attendance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Attendance: 85%"
+                        android:textColor="#999999" />
+
+                    <TextView
+                        android:id="@+id/absent_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Absent Days: 3"
+                        android:textColor="#999999"
+                        android:layout_marginTop="8dp" />
+
+                    <TextView
+                        android:id="@+id/present_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Present Days: 17"
+                        android:textColor="#999999"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

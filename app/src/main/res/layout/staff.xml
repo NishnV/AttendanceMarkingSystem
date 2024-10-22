@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1a1a1a"
+    android:padding="16dp">
+
+    <!-- Top Toolbar with Centered Title, Menu, and Logout -->
+    <RelativeLayout
+        android:id="@+id/top_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
+        android:padding="16dp"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/menu_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_more"
+            android:background="?android:attr/selectableItemBackground"
+            android:tint="#FFFFFF"
+            android:layout_alignParentStart="true"
+            android:contentDescription="Menu" />
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_centerInParent="true" />
+
+        <ImageButton
+            android:id="@+id/logout_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_lock_power_off"
+            android:background="?android:attr/selectableItemBackground"
+            android:tint="#FFFFFF"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Logout" />
+    </RelativeLayout>
+
+    <!-- Attendance Management Section -->
+    <LinearLayout
+        android:id="@+id/attendance_management"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_toolbar"
+        android:orientation="vertical"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/attendance_management_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance Management"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Individual Attendance Items -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="space_between"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/student1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="John Smith"
+                android:textColor="#ffffff"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="space_between"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/student2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Emily Johnson"
+                android:textColor="#ffffff"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="space_between"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/student3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Michael Brown"
+                android:textColor="#ffffff"
+                android:layout_marginEnd="8dp" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Attendance Logs Section -->
+    <LinearLayout
+        android:id="@+id/attendance_logs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/attendance_management"
+        android:orientation="vertical"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attendance Logs"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:id="@+id/log1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="13th Nov 2023: Alex Turner - Present"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="8dp"
+            android:background="#222222"
+            android:padding="8dp"
+            android:elevation="4dp" />
+
+        <TextView
+            android:id="@+id/log2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12th Nov 2023: Sarah Connor - Absent"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="8dp"
+            android:background="#222222"
+            android:padding="8dp"
+            android:elevation="4dp" />
+
+        <TextView
+            android:id="@+id/log3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11th Nov 2023: John Doe - Present"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="8dp"
+            android:background="#222222"
+            android:padding="8dp"
+            android:elevation="4dp" />
+    </LinearLayout>
+
+    <!-- Scanning Ports Section -->
+    <LinearLayout
+        android:id="@+id/scanning_ports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/attendance_logs"
+        android:orientation="vertical"
+        android:background="#333333"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scanning Ports"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/qr_code_scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QR Code Scan"
+            android:backgroundTint="#7D3C98"
+            android:textColor="#ffffff"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/camera_scan_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Camera Scan"
+            android:backgroundTint="#7D3C98"
+            android:textColor="#ffffff"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
